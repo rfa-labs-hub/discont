@@ -23,34 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// ============================================
-// Аккордеон для вакансий
-// ============================================
-
-document.addEventListener('DOMContentLoaded', () => {
-    const vacancyHeaders = document.querySelectorAll('.vacancy-header');
-    
-    vacancyHeaders.forEach(header => {
-        header.addEventListener('click', () => {
-            const isExpanded = header.getAttribute('aria-expanded') === 'true';
-            
-            // Закрываем все остальные аккордеоны (опционально)
-            // Если нужно, чтобы открытыми могли быть несколько - закомментируйте этот блок
-            vacancyHeaders.forEach(otherHeader => {
-                if (otherHeader !== header) {
-                    otherHeader.setAttribute('aria-expanded', 'false');
-                }
-            });
-            
-            // Переключаем текущий аккордеон
-            if (isExpanded) {
-                header.setAttribute('aria-expanded', 'false');
-            } else {
-                header.setAttribute('aria-expanded', 'true');
-            }
-        });
-    });
-});
+// Вакансии отображаются всегда раскрытыми (без аккордеона)
 
 // ============================================
 // Мобильное меню

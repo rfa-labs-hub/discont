@@ -435,6 +435,15 @@ section.visible {
     background-color: #0d2a4a;
 }
 
+.vacancy-header--always-open {
+    cursor: default;
+    pointer-events: none;
+}
+
+.vacancy-header--always-open:hover {
+    background-color: var(--color-primary);
+}
+
 .vacancy-title {
     flex: 1;
     font-family: 'Inter', sans-serif;
@@ -453,12 +462,11 @@ section.visible {
 }
 
 .vacancy-content {
-    max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease, padding 0.4s ease;
-    padding: 0 var(--spacing-md);
 }
 
+/* Вакансия всегда раскрыта */
+.vacancy-header--always-open + .vacancy-content,
 .vacancy-header[aria-expanded="true"] + .vacancy-content {
     max-height: 5000px;
     padding: var(--spacing-md);
